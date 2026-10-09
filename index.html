@@ -114,6 +114,23 @@ footer{text-align:center;padding:34px 0 44px;color:var(--muted);font-size:13px}f
   </div>
 </section>
 
+
+<section class="section wrap" id="love-counter" style="text-align:center">
+  <div class="head">
+    <div class="kicker">С того самого взгляда ♡</div>
+    <h2>Наша история любви</h2>
+    <p class="sub">Для моей Дильназ ❤️</p>
+  </div>
+  <div style="max-width:520px;margin:24px auto;padding:28px 18px;background:#fff4f8;border:1px solid #f0c4d3;border-radius:24px">
+    <div style="font-size:38px">❤️</div>
+    <div id="love-days" style="font-size:44px;font-weight:700;color:#d86f96">—</div>
+    <div style="color:#9c6d7d">дней с момента нашего знакомства</div>
+    <p style="color:#9c6d7d;font-style:italic;margin-bottom:0">
+      «Каждый день — ещё одна страница нашей истории»
+    </p>
+  </div>
+</section>
+
 </main>
 <footer><div class="big">Случайная встреча. Особенная история. ♡</div><p>Для Дильназ — с любовью от Жарығым.</p><span>30.07.2026 · начало нашей истории</span></footer>
 <script>
@@ -129,6 +146,13 @@ document.getElementById('music-toggle').addEventListener('click', () => {
   player.style.display = isHidden ? 'block' : 'none';
   button.textContent = isHidden ? 'Скрыть плеер ♡' : '▶ Наша песня ❤️';
 });
+
+const startDate = new Date(2026, 6, 30);
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+const days = Math.max(0, Math.floor((today - startDate) / 86400000));
+document.getElementById('love-days').textContent = days;
+
 </script>
 </body>
 </html>
