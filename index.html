@@ -122,6 +122,13 @@ menu.addEventListener('click',()=>nav.classList.toggle('open'));
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
 document.getElementById('open').addEventListener('click',()=>{const s=document.getElementById('secret');s.classList.toggle('show');document.getElementById('open').textContent=s.classList.contains('show')?'Спрятать письмо ♡':'Открыть продолжение письма 💌';});
 document.getElementById('heart').addEventListener('click',()=>{document.getElementById('reply').textContent='Дильназ, отправляю тебе самые нежные объятия. Ты особенная для меня. ♡';for(let i=0;i<18;i++){const h=document.createElement('span');h.textContent=['♡','♥','💗','✿'][i%4];h.style.cssText=`position:fixed;z-index:20;left:${3+Math.random()*94}%;top:${18+Math.random()*72}%;font-size:${18+Math.random()*23}px;pointer-events:none;color:#df789a;animation:float 2.4s ease-out forwards`;document.body.appendChild(h);setTimeout(()=>h.remove(),2500);}});
+document.getElementById('music-toggle').addEventListener('click', () => {
+  const player = document.getElementById('music-player');
+  const button = document.getElementById('music-toggle');
+  const isHidden = player.style.display === 'none';
+  player.style.display = isHidden ? 'block' : 'none';
+  button.textContent = isHidden ? 'Скрыть плеер ♡' : '▶ Наша песня ❤️';
+});
 </script>
 </body>
 </html>
