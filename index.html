@@ -131,6 +131,115 @@ footer{text-align:center;padding:34px 0 44px;color:var(--muted);font-size:13px}f
   </div>
 </section>
 
+
+<section id="animated-couple" style="max-width:600px;margin:35px auto;padding:24px 12px;text-align:center;background:linear-gradient(180deg,#fff0f6,#f5eaff);border:1px solid #f5cadd;border-radius:28px;overflow:hidden;">
+  <h2 style="color:#bd648c;margin:0 0 8px;">Ты и я, Дильназ ♡</h2>
+  <p style="color:#a47791;margin:0 0 12px;">Моя любимая история начинается с тебя</p>
+
+  <svg viewBox="0 0 600 320" role="img" aria-label="Анимированная влюблённая пара под розовым закатом" style="width:100%;max-width:520px;display:block;margin:auto;">
+    <defs>
+      <linearGradient id="loveSky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f7c7e0"/>
+        <stop offset="100%" stop-color="#ffe9d7"/>
+      </linearGradient>
+    </defs>
+    <rect x="5" y="5" width="590" height="310" rx="26" fill="url(#loveSky)"/>
+    <circle cx="300" cy="118" r="67" fill="#fff2b5" opacity=".9"/>
+    <path d="M5 220 Q120 160 235 220 T470 215 T595 205 V315 H5Z" fill="#e9bad8" opacity=".7"/>
+    <path d="M5 260 Q150 210 300 260 T595 245 V315 H5Z" fill="#dca7cb" opacity=".6"/>
+
+    <g class="couple-boy">
+      <ellipse cx="218" cy="116" rx="29" ry="32" fill="#f0c09e"/>
+      <path d="M189 112 Q184 77 215 78 Q245 76 248 108 L239 98 Q217 108 194 96Z" fill="#382a32"/>
+      <circle cx="208" cy="117" r="2.5" fill="#44313a"/>
+      <circle cx="229" cy="117" r="2.5" fill="#44313a"/>
+      <path d="M211 130 Q219 137 227 130" fill="none" stroke="#a75f68" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M191 151 Q218 139 244 153 L257 235 L177 235Z" fill="#5c526f"/>
+      <path d="M190 157 L169 192 L235 205" fill="none" stroke="#f0c09e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M241 159 L265 190 L291 190" fill="none" stroke="#f0c09e" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M195 232 L190 275 M239 232 L245 275" stroke="#51445f" stroke-width="19" stroke-linecap="round"/>
+      <path d="M176 279 H198 M235 279 H257" stroke="#51445f" stroke-width="10" stroke-linecap="round"/>
+    </g>
+
+    <g class="couple-girl">
+      <ellipse cx="364" cy="116" rx="29" ry="32" fill="#f5c9a9"/>
+      <path d="M334 120 Q327 77 363 76 Q397 80 395 123 L389 158 L378 142 L377 101 Q356 114 339 101Z" fill="#75443b"/>
+      <path d="M340 91 Q323 120 339 157 L350 167 L348 116Z" fill="#75443b"/>
+      <circle cx="354" cy="117" r="2.5" fill="#49323a"/>
+      <circle cx="375" cy="117" r="2.5" fill="#49323a"/>
+      <path d="M356 130 Q364 137 372 130" fill="none" stroke="#b36575" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M338 153 Q363 141 389 154 L411 228 Q364 251 316 228Z" fill="#e98db4"/>
+      <path d="M343 163 L324 190 L292 190" fill="none" stroke="#f5c9a9" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M388 160 L408 192 L393 211" fill="none" stroke="#f5c9a9" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M336 235 L333 275 M390 235 L398 275" stroke="#f5c9a9" stroke-width="17" stroke-linecap="round"/>
+      <path d="M320 279 H344 M386 279 H410" stroke="#bd648c" stroke-width="10" stroke-linecap="round"/>
+      <path d="M343 174 l7 8 -7 8 -7 -8Z M379 192 l7 8 -7 8 -7 -8Z" fill="#fff1f6"/>
+    </g>
+
+    <g class="floating-heart" fill="#e75b91">
+      <path d="M300 83 C286 72 274 88 300 107 C326 88 314 72 300 83Z"/>
+    </g>
+    <g class="floating-heart heart-two" fill="#d96db1">
+      <path d="M145 150 C136 142 128 153 145 166 C162 153 154 142 145 150Z"/>
+    </g>
+    <g class="floating-heart heart-three" fill="#e75b91">
+      <path d="M452 126 C443 118 435 129 452 142 C469 129 461 118 452 126Z"/>
+    </g>
+  </svg>
+
+  <p style="font-size:17px;color:#bd648c;font-weight:600;margin:8px 0 0;">
+    Жаным, әрқашан бірге болайық ❤️
+  </p>
+  <p style="font-size:13px;color:#a47791;margin:5px 0 0;">
+    С любовью, Жарығым ♡
+  </p>
+</section>
+
+<style>
+  #animated-couple .couple-boy,
+  #animated-couple .couple-girl {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: couple-sway 2.8s ease-in-out infinite;
+  }
+
+  #animated-couple .couple-girl {
+    animation-delay: -.7s;
+  }
+
+  #animated-couple .floating-heart {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: heart-float 2.5s ease-in-out infinite;
+  }
+
+  #animated-couple .heart-two {
+    animation-delay: -.8s;
+  }
+
+  #animated-couple .heart-three {
+    animation-delay: -1.5s;
+  }
+
+  @keyframes couple-sway {
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-5px) rotate(1deg); }
+  }
+
+  @keyframes heart-float {
+    0%, 100% { transform: translateY(8px) scale(.85); opacity: .55; }
+    50% { transform: translateY(-13px) scale(1.12); opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #animated-couple .couple-boy,
+    #animated-couple .couple-girl,
+    #animated-couple .floating-heart {
+      animation: none;
+    }
+  }
+</style>
+
 </main>
 <footer><div class="big">Случайная встреча. Особенная история. ♡</div><p>Для Дильназ — с любовью от Жарығым.</p><span>30.07.2026 · начало нашей истории</span></footer>
 <script>
