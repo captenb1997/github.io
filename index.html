@@ -240,6 +240,202 @@ footer{text-align:center;padding:34px 0 44px;color:var(--muted);font-size:13px}f
   }
 </style>
 
+
+<section id="reasons-love" style="max-width:560px;margin:35px auto;padding:28px 20px;text-align:center;background:linear-gradient(145deg,#fff5f8,#fce4ec);border:1px solid #f4c7d5;border-radius:28px;box-shadow:0 12px 35px #d88ca51c;">
+  <div style="font-size:36px;margin-bottom:8px;">💗</div>
+  <h2 style="color:#bd648c;margin:0 0 10px;">100 причин, почему я тебя люблю</h2>
+  <p style="color:#a47791;margin:0 0 22px;">Для моей Дильназ — от Жарығым ♡</p>
+
+  <div style="background:#fff;border:1px solid #f5d5e0;border-radius:20px;padding:25px 18px;min-height:145px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+    <div id="reason-number" style="font-size:13px;color:#c47a9a;margin-bottom:12px;">Твоя причина № 1 из 100</div>
+    <div id="reason-text" aria-live="polite" style="font-size:20px;line-height:1.6;color:#804a64;font-weight:600;">Нажми на сердечко, и я расскажу тебе одну из причин ❤️</div>
+    <div id="reason-heart" style="font-size:27px;margin-top:14px;">♡</div>
+  </div>
+
+  <div id="reason-progress" style="height:7px;background:#f3d9e3;border-radius:10px;margin:20px 0 15px;overflow:hidden;">
+    <div id="reason-progress-fill" style="width:0;height:100%;background:linear-gradient(90deg,#f2a7c4,#c77ba5);border-radius:10px;transition:width .35s;"></div>
+  </div>
+
+  <p id="reason-count" style="font-size:13px;color:#a47791;">Открыто причин: 0 из 100</p>
+
+  <button id="reason-next" type="button" style="width:100%;max-width:330px;border:0;border-radius:30px;padding:15px 20px;background:linear-gradient(90deg,#e99cba,#c47ba6);color:white;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 5px 15px #d88ca540;">
+    Открыть причину ❤️
+  </button>
+
+  <p style="font-size:13px;color:#b18499;margin:18px 0 0;">И даже 100 причин не смогут описать всю мою любовь к тебе.</p>
+</section>
+
+<style>
+  #reasons-love button {
+    transition: transform .2s, box-shadow .2s;
+  }
+  #reasons-love button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px #d88ca555;
+  }
+  #reasons-love button:focus-visible {
+    outline: 3px solid #bd648c;
+    outline-offset: 3px;
+  }
+  #reason-text.reason-pop {
+    animation: reason-appear .4s ease;
+  }
+  @keyframes reason-appear {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #reasons-love *, #reasons-love *::before, #reasons-love *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  const reasons100 = [
+    "За твою красивую улыбку.",
+    "За твои глаза, в которых хочется утонуть.",
+    "За то, как ты умеешь поднять мне настроение.",
+    "За твой нежный голос.",
+    "За то, что рядом с тобой мне спокойно.",
+    "За твою доброту.",
+    "За твою нежность.",
+    "За то, как ты смеёшься.",
+    "За твою искренность.",
+    "За то, что ты особенная для меня.",
+    "За наши разговоры обо всём на свете.",
+    "За то, что с тобой не страшно быть собой.",
+    "За твои милые привычки.",
+    "За твою заботу.",
+    "За то, как ты смотришь на меня.",
+    "За наши общие воспоминания.",
+    "За то, что даже обычный день с тобой становится особенным.",
+    "За твою улыбку, когда ты счастлива.",
+    "За твоё большое сердце.",
+    "За то, что ты умеешь слушать.",
+    "За твою красоту — и внешнюю, и внутреннюю.",
+    "За то, что мне хочется рассказывать тебе обо всём.",
+    "За наши маленькие шутки.",
+    "За то, как ты произносишь моё имя.",
+    "За твою нежную душу.",
+    "За то, что ты вдохновляешь меня становиться лучше.",
+    "За то, что с тобой можно мечтать.",
+    "За наши взгляды, которым не нужны слова.",
+    "За твою улыбку, которую хочется запоминать.",
+    "За то, что ты умеешь быть рядом.",
+    "За твою индивидуальность.",
+    "За то, что ты умеешь удивлять меня.",
+    "За каждую минуту, проведённую вместе.",
+    "За твою милую непосредственность.",
+    "За то, что ты делаешь мой мир теплее.",
+    "За возможность узнавать тебя всё лучше.",
+    "За то, что ты умеешь радоваться мелочам.",
+    "За твои объятия.",
+    "За то, что мне хочется беречь тебя.",
+    "За то, что рядом с тобой хочется улыбаться.",
+    "За твою уверенность.",
+    "За твои мечты и желания.",
+    "За то, как ты заботишься о близких.",
+    "За то, что ты умеешь быть настоящей.",
+    "За наше знакомство 30 июля 2026 года.",
+    "За тот самый взгляд через зеркало заднего вида.",
+    "За то, что случайная встреча стала началом нашей истории.",
+    "За волнение, которое я чувствовал в начале.",
+    "За каждый момент, когда я думаю о тебе и улыбаюсь.",
+    "За то, что ты стала важной частью моей жизни.",
+    "За твою терпеливость.",
+    "За твою ласковость.",
+    "За то, что мне хочется делать тебя счастливой.",
+    "За твой неповторимый характер.",
+    "За то, что ты можешь рассмешить меня.",
+    "За твои маленькие знаки внимания.",
+    "За то, что с тобой хочется делиться хорошими новостями.",
+    "За то, что ты умеешь делать моменты незабываемыми.",
+    "За твою честность.",
+    "За то, что рядом с тобой я чувствую тепло.",
+    "За твои красивые волосы.",
+    "За твой стиль и вкус.",
+    "За то, что ты умеешь удивляться.",
+    "За наши планы и мечты.",
+    "За то, что ты даришь мне вдохновение.",
+    "За то, что я могу скучать по тебе даже после недолгой разлуки.",
+    "За желание снова и снова видеть тебя.",
+    "За то, что мне дороги даже наши простые моменты.",
+    "За то, что ты умеешь поддержать.",
+    "За то, что ты приносишь в мою жизнь нежность.",
+    "За то, что мне хочется узнавать твой внутренний мир.",
+    "За твою смелость.",
+    "За твою любознательность.",
+    "За то, что ты умеешь замечать красоту вокруг.",
+    "За то, что с тобой хочется строить планы на будущее.",
+    "За то, что мне важно твоё мнение.",
+    "За то, что я хочу видеть тебя счастливой.",
+    "За твои добрые слова.",
+    "За то, как ты радуешься приятным сюрпризам.",
+    "За то, что мне хочется поддерживать твои мечты.",
+    "За то, что каждый день можно узнавать в тебе что-то новое.",
+    "За то, что ты умеешь быть нежной и сильной.",
+    "За твою уникальность.",
+    "За то, что наши воспоминания хочется хранить.",
+    "За то, что ты даришь мне поводы для улыбки.",
+    "За то, что рядом с тобой хочется быть внимательнее.",
+    "За то, что ты делаешь обычные вещи значимыми.",
+    "За то, что мне хочется удивлять тебя приятными мелочами.",
+    "За то, что ты заслуживаешь самого искреннего отношения.",
+    "За то, что мне хочется говорить тебе комплименты.",
+    "За то, что я ценю время с тобой.",
+    "За то, что с тобой можно просто молчать и понимать друг друга.",
+    "За то, что ты умеешь делать мир добрее.",
+    "За то, что мне хочется создавать с тобой новые воспоминания.",
+    "За все моменты, которые мы ещё переживём вместе.",
+    "За то, что я могу говорить тебе о своих чувствах.",
+    "За то, что ты — это ты, Дильназ.",
+    "За нашу особенную историю.",
+    "За то, что я выбираю узнавать, понимать и ценить тебя каждый день.",
+    "И просто за то, что я люблю тебя, Дильназ. ❤️"
+  ];
+
+  const root = document.getElementById("reasons-love");
+  if (!root || root.dataset.ready === "true") return;
+  root.dataset.ready = "true";
+
+  let current = 0;
+  const text = document.getElementById("reason-text");
+  const number = document.getElementById("reason-number");
+  const count = document.getElementById("reason-count");
+  const fill = document.getElementById("reason-progress-fill");
+  const heart = document.getElementById("reason-heart");
+  const button = document.getElementById("reason-next");
+
+  button.addEventListener("click", function () {
+    if (current >= reasons100.length) {
+      text.textContent = "Дильназ, моя любовь не заканчивается на сотой причине. ❤️";
+      number.textContent = "Моё сердце всегда найдёт новую причину";
+      heart.textContent = "💗";
+      button.textContent = "Прочитать сначала ↻";
+      current = 0;
+      count.textContent = "Все 100 причин уже открыты!";
+      fill.style.width = "100%";
+      return;
+    }
+
+    text.classList.remove("reason-pop");
+    void text.offsetWidth;
+    text.textContent = reasons100[current];
+    text.classList.add("reason-pop");
+
+    current++;
+    number.textContent = "Причина № " + current + " из " + reasons100.length;
+    count.textContent = "Открыто причин: " + current + " из " + reasons100.length;
+    fill.style.width = (current / reasons100.length * 100) + "%";
+    heart.textContent = current === 100 ? "💖" : "♡";
+    button.textContent = current === 100 ? "Открыть финальное послание ❤️" : "Следующая причина 💗";
+  });
+})();
+</script>
+
 </main>
 <footer><div class="big">Случайная встреча. Особенная история. ♡</div><p>Для Дильназ — с любовью от Жарығым.</p><span>30.07.2026 · начало нашей истории</span></footer>
 <script>
